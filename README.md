@@ -11,4 +11,4 @@ Implementare server minecraft:
 
 ## Scrum Poker
 
-[https://www.scrumpoker-online.org/en/room/71781264/scrum-poker](https://www.scrumpoker-online.org/en/room/71781264/scrum-poker)
+[https://www.scrumpoker-online.org/en/room/25382917/scrum-poker](https://www.scrumpoker-online.org/en/room/25382917/scrum-poker)
