@@ -21,10 +21,10 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Build Docker image
-      run: docker build -t ghcr.io/sindriaacademy/minecraft:latest /openjdk17
+      run: docker build -t ghcr.io/sindriaacademy/minecraft:latest .
     
     - name: Tag Docker image
-      run: docker tag ghcr.io/sindriaacademy/minecraft:latest ghcr.io/${{ github.repository_owner }}/minecraft:openjdk17
+      run: docker tag ghcr.io/sindriaacademy/minecraft:latest ghcr.io/sindriaacademy/minecraft:openjdk17
       
     - name: Push Docker image to GHCR
       run: docker push ghcr.io/sindriaacademy/minecraft:openjdk17
