@@ -1,0 +1,37 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 14
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Deploy to Hosting Platform
+      run: |
+        # Add your deployment script or commands here
+        # For example, deploy to a hosting platform like Netlify, Vercel, or GitHub Pages
+        # Replace the placeholder URLs and commands with your actual deployment setup
+        echo "Deploying to Hosting Platform..."
+        echo "Deployment URL: https://your-deployment-url.com"
