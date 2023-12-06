@@ -1,0 +1,30 @@
+name: Build OpenJDK17
+
+on:
+  push:
+    branches:
+      - main
+      - feature-33
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Login to GHCR
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build Docker image
+      run: docker build -t ghcr.io/${{ github.repository_owner }}/minecraft:latest /openjdk17
+    
+    - name: Tag Docker image
+      run: docker tag ghcr.io/${{ github.repository_owner }}/minecraft:latest ghcr.io/${{ github.repository_owner }}/minecraft:openjdk17
+      
+    - name: Push Docker image to GHCR
+      run: docker push ghcr.io/${{ github.repository_owner }}/minecraft:openjdk17
