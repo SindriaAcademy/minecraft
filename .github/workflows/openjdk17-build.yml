@@ -3,7 +3,7 @@ name: Build OpenJDK17
 on:
   push:
     branches:
-      - feature-33
+      - main
       
 jobs:
   build:
