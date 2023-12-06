@@ -1,0 +1,5 @@
+#Implement in the code the following feature
+#Link from https://mcversions.net/download/1.20.2
+#command: wget -O server.jar https://piston-data.mojang.com/v1/objects/5b868151bd02b41319f54c8d4061b8cae84e665c/server.jar
+
+RUN wget -O server.jar https://piston-data.mojang.com/v1/objects/5b868151bd02b41319f54c8d4061b8cae84e665c/server.jar
